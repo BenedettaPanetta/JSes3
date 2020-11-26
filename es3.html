@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Excercise 3 training</title>
+    </head>
+    <body>
+        <h1>Es3</h1>
+        <p>Creazione di una classe in js senza usare il prototipo class: classe base che espone le funzioni di somma, sottrazione, moltiplicazione e divisione salvando i risultati all'interno della classe</p>
+        <p style="background-color: rgb(247, 252, 0)">Inserisci 2 numeri e schiaccia un pulsante per eseguire un'operazione</p>
+        <input type="number" id="primo"></input>
+        <input type="number" id="secondo"></input>
+        <br><br>
+        <div id="div1"></div>
+        <br><br>
+
+        <script src="js3.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            
+            var somma = function(){
+                var v1 = $("#primo").val();
+                var v2 = $("#secondo").val();
+                var ris = +v1 + +v2;
+                $("#div1").html(ris);
+            }
+            var btnS = $('<button id="btn1S"></button>');
+            btnS.on("click", somma);
+            btnS.html("SOMMA");
+            $("body").append(btnS);
+            
+            var molt = function(){
+                var v1 = $("#primo").val();
+                var v2 = $("#secondo").val();
+                var ris = v1*v2;
+                $("#div1").html(ris);
+            }
+            var btnM = $('<button id="btn1M"></button>');
+            btnM.on("click", molt);
+            btnM.html("MOLTIPLICAZIONE");
+            $("body").append(btnM);
+
+            var sott = function(){
+                var v1 = $("#primo").val();
+                var v2 = $("#secondo").val();
+                var ris = v1-v2;
+                $("#div1").html(ris);
+            }
+            var btnSot = $('<button id="btn1Sot"></button>');
+            btnSot.on("click", sott);
+            btnSot.html("SOTTRAZIONE");
+            $("body").append(btnSot);
+
+            var divi = function(){
+                var v1 = $("#primo").val();
+                var v2 = $("#secondo").val();
+                var ris = v1/v2;
+                $("#div1").html(ris);
+            }
+            var btnD = $('<button id="btn1D"></button>');
+            btnD.on("click", divi);
+            btnD.html("DIVISIONE");
+            $("body").append(btnD);
+        </script>
+    </body>
+</html>
