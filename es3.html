@@ -122,10 +122,40 @@
                 //$("#table").append("<tr><td>"+v1+"</td><td>"+segno+"</td><td>"+v2+"</td><td>"+risultato+"</td></tr>");
                 var string = "<tr><td>"+v1+"</td><td>"+segno+"</td><td>"+v2+"</td><td>"+risultato+"</td></tr>";
                 var line = $(string);
-                //salvo nel local storage string, nella chiave "operation"
+                $("#table").append(line);
+
+                //oggetti
+                var operation_array = localStorage.getItem("array"); //oggetto con cui creo array e prendo i valori
+                if(operation_array === null){
+                    operation_array = [];
+                }
+                /*operation_array = []; //array
+                aggiungere elemnto a array
+                operation_array[0] = "io"; //indico posizione
+                operation_array.push("pluto"); //appinge in ultima posizione
+                metodo .pop restituisce array*/
+                operation_array.push(string); //aggiungo righe tabella
+
+
+
+                /*salvo nel local storage string, nella chiave "operation"
                 localStorage.setItem("operation", string); 
                 var last_operation = localStorage.getItem("operation");
-                $("#table").append(line);
+                $("#table").append(line);*/
+
+                localStorage.setItem("array", operation_array); //risalvo array in localstorage in modo aggiornato
+                var operation_array = localStorage.getItem("array");
+                //var last_operation = localStorage.getItem("operation");
+               
+
+
+                /*
+
+                #selezionaid
+                .selezionaclasse
+                "senzanulla"selezionaarray
+
+                */
             }
         </script>
     </body>
